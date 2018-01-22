@@ -1,5 +1,5 @@
 # Segma
-###  Simple and Secure PHP  Framework For Small Projects.
+###  Simple and Secure PHP  Framework For Small Projects Written In Php 7.
 ###  Features :-
 0. #### MVC Structure.
 1. Filter Data And Santize It.
