@@ -32,7 +32,7 @@
         define('LINK_SIGN','~');
         define('MAIL',''); //This Will Be The Mail Setting In Which All Mail Of The App Will Send From It
         define('COMPANY_MAIL','');//Company Name To Be Used In Mailer System
-        define('PRODUCTION' , true);
+        define('PRODUCTION' , true); //Script Status True If In Production False Otherwise !
         define('Geo_Location_Server_Access' , ''); // Uses eurekapi.com As Geolocation Service
         define('APP_FOLDER_PATH' , "private" . DS);
         define("BASE_URI" , $_SERVER['DOCUMENT_ROOT']  . DS .APP_FOLDER_PATH);//Can Be Access By Browser
