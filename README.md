@@ -11,7 +11,7 @@
 7. PHP Mailer.
 8. Multi Lang.
 
-# Example For Upload Use.
+# Example For Upload Text File.
 ```
 $uploadTextFile = new UploadTextFile("Destination Is Here !");
 $uploadTextFile->intelligentUpload("Salt","Something Unique","Success Msg"); // Done :) Without Search Of Global $_FILES Or If Statement Just Two Lines !
