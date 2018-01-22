@@ -10,6 +10,10 @@
 6. Session Protection (Fixation-Hijacking).
 7. PHP Mailer.
 8. Multi Lang.
+9. Query Builder.
+10. Mysql Support.
+11. Cache System.
+#### And More !
 
 # Example For Upload Text File.
 ```
