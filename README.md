@@ -1,7 +1,7 @@
 # Segma
-### H3 Simple and Secure PHP  Framework For Small Projects.
-### H4 Features :-
-##### H5 1. MVC Structure.
+###  Simple and Secure PHP  Framework For Small Projects.
+###  Features :-
+#####  1. MVC Structure.
 1. Filter Data And Santize It.
 2. intelligent Upload File System.
 3. Ready With Commands Pattern.
