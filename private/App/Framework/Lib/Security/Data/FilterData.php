@@ -19,6 +19,8 @@
             protected $errorMsg = [];
             protected $clearData= [];
             protected $option = [];
+            protected $santizeData;
+            protected $validData;
             /**
             *['Name'=>'value','max'=>'length','min'=>'length',[option]]
             *option set for drop down menu or select value as Constant For integer or float or string or anything
@@ -31,8 +33,31 @@
                 $this->minLength = $dirtyData['min'];
                 return $this;
             }
-            protected function trimData($data){
-                    return trim($data);
+            public  function trimData($data,string $postion ='both',string $charlist = ''){
+                    switch (strtolower($postion)) {
+                            case 'left':
+                                    if(!empty($charlist)){
+                                                $trim = ltrim($data,$charlist);
+                                    }else{
+                                                $trim = ltrim($data);
+                                    }
+                                    break;
+                            case 'right':
+                                    if(!empty($charlist)){
+                                                $trim = rtrim($data,$charlist);
+                                    }else{
+                                                $trim = rtrim($data);
+                                    }
+                                    break;
+                            default:
+                                    if(!empty($charlist)){
+                                                $trim = trim($data,$charlist);
+                                    }else{
+                                                $trim = trim($data);
+                                    }
+                                    break;
+                    }
+                    return $trim;
             }
 
              public function proccessFilter(){
@@ -44,14 +69,16 @@
                         if Yes  Create Web Error View To See By User
                         if not return the clearedData      
                 */
+                        //Santize Data
+                        $this->santizeData($this->dirtyData); // Good Data At This Property
+
                         $this->validateData();
                         
                         if(!array_key_exists($this->htmlAttribute , $this->errorMsg)){
                                 
-                                //Santize Data
-                                $clearData = $this->santizeData(); // Good Data At This Property
                                 //Return Good Data
-                                return $clearData[$this->htmlAttribute];
+                                
+                                return $this->validData;
 
                         }else{
                                 // Return WebView Error
@@ -64,7 +91,7 @@
 
             }
 
-            protected function validateData():bool{
+            protected function validateData(){
                    if(isset($this->option) && !is_null($this->option)){
                             $valuesFound = (in_array($this->dirtyData , $this->option)) ? true : false;
                             if(!$valuesFound){
@@ -73,6 +100,6 @@
                     }
                     return true; 
             }
-            Abstract protected function santizeData():array;
+            Abstract protected function santizeData($dirtyData);
             // i think for web view error msg function
         }
