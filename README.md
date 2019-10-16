@@ -18,6 +18,6 @@
 # Example For Upload Text File.
 ```
 $uploadTextFile = new UploadTextFile("Destination Is Here !");
-$uploadTextFile->intelligentUpload("Salt","Something Unique","Success Msg"); // Done :) Without Search Of Global $_FILES Or If Statement Just Two Lines !
+$uploadTextFile->intelligentUpload("Salt","Something Unique","Success Msg"); // Done :)
 
 ```
